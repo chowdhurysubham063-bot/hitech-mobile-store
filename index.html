@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HITECH | New &amp; Used Smartphones, Mobile Accessories | Ichapur, Kanthadhar</title>
+<meta name="description" content="HITECH - Premium new phones, used phones and mobile accessories in Ichapur, Kanthadhar, West Bengal. Order on WhatsApp.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' font-size='58' font-weight='700' text-anchor='middle' fill='%23d4af37' font-family='Georgia'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#050505;
+  --black-2:#0d0d0d;
+  --black-3:#161616;
+  --card:#121212;
+  --gold:#d4af37;
+  --gold-light:#f6e27a;
+  --gold-dark:#a67c00;
+  --text:#f2efe6;
+  --muted:#a9a395;
+  --line:rgba(212,175,55,.22);
+  --gold-grad:linear-gradient(135deg,#f6e27a 0%,#d4af37 45%,#a67c00 100%);
+  --radius:20px;
+  --shadow:0 20px 50px rgba(0,0,0,.55);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--black);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;
+  background:
+    radial-gradient(900px 500px at 85% -5%,rgba(212,175,55,.12),transparent 60%),
+    radial-gradient(700px 500px at -10% 40%,rgba(212,175,55,.07),transparent 60%),
+    var(--black);
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font-family:inherit}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+.container{width:min(1200px,92%);margin:0 auto}
+.gold-text{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.85rem 1.7rem;border-radius:50px;border:1px solid transparent;
+  font-weight:500;font-size:.95rem;cursor:pointer;transition:.3s;letter-spacing:.3px;
+}
+.btn-gold{background:var(--gold-grad);color:#111;box-shadow:0 8px 24px rgba(212,175,55,.28)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(212,175,55,.45)}
+.btn-outline{border-color:var(--gold);color:var(--gold);background:transparent}
+.btn-outline:hover{background:var(--gold);color:#111;transform:translateY(-3px)}
+.btn-wa{background:#25D366;color:#06210f;font-weight:600}
+.btn-wa:hover{background:#2fe874;transform:translateY(-2px);box-shadow:0 10px 24px rgba(37,211,102,.35)}
+
+/* ---------- Navbar ---------- */
+header{
+  position:fixed;top:0;left:0;width:100%;z-index:100;
+  transition:.35s;padding:.9rem 0;
+}
+header.scrolled{
+  background:rgba(5,5,5,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);padding:.55rem 0;
+}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:.7rem}
+.logo-mark{
+  width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+  background:var(--black-3);border:1.5px solid var(--gold);
+  box-shadow:0 0 18px rgba(212,175,55,.25),inset 0 0 12px rgba(212,175,55,.12);
+}
+.logo-text{font-family:'Playfair Display',serif;font-weight:800;font-size:1.6rem;letter-spacing:3px;line-height:1}
+.logo-sub{display:block;font-family:'Poppins';font-size:.55rem;letter-spacing:3px;color:var(--muted);font-weight:400;margin-top:3px}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-size:.9rem;color:var(--muted);position:relative;transition:.3s;padding:.3rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold-grad);transition:.3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{padding:.55rem 1.2rem;font-size:.85rem}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;cursor:pointer;position:relative}
+.burger span{position:absolute;left:11px;width:20px;height:2px;background:var(--gold);transition:.3s}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:28px}
+.burger.open span:nth-child(1){top:21px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;display:flex;align-items:center;padding:7.5rem 0 4rem;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);border:1px solid var(--line);padding:.4rem 1rem;border-radius:50px;background:rgba(212,175,55,.06);
+}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.4rem);line-height:1.1;margin:1.3rem 0 1.2rem;font-weight:700}
+.hero p.lead{color:var(--muted);font-size:1.05rem;max-width:520px;margin-bottom:2rem}
+.hero-btns{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.6rem}
+.stats{display:flex;gap:2.4rem;flex-wrap:wrap}
+.stat b{display:block;font-family:'Playfair Display',serif;font-size:1.9rem;color:var(--gold-light)}
+.stat span{font-size:.8rem;color:var(--muted);letter-spacing:1px}
+.hero-visual{position:relative;height:560px;display:flex;justify-content:center;align-items:center}
+.hero-glow{position:absolute;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,175,55,.35),transparent 65%);filter:blur(20px);animation:breathe 6s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.12);opacity:.75}}
+.hero-ring{position:absolute;width:440px;height:440px;border-radius:50%;border:1px dashed var(--line);animation:spin 40s linear infinite}
+.hero-ring.r2{width:520px;height:520px;animation-duration:60s;animation-direction:reverse;opacity:.6}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-phone{position:absolute;filter:drop-shadow(0 30px 40px rgba(0,0,0,.7))}
+.hero-phone.p1{width:230px;z-index:3;animation:float 6s ease-in-out infinite}
+.hero-phone.p2{width:185px;left:2%;top:14%;transform:rotate(-12deg);z-index:2;animation:float2 7s ease-in-out infinite}
+.hero-phone.p3{width:185px;right:2%;top:20%;transform:rotate(12deg);z-index:2;animation:float3 8s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-18px)}}
+@keyframes float2{50%{transform:rotate(-12deg) translateY(14px)}}
+@keyframes float3{50%{transform:rotate(12deg) translateY(-14px)}}
+
+/* ---------- Sections ---------- */
+section{padding:5.5rem 0;position:relative}
+.sec-head{text-align:center;margin-bottom:3rem}
+.sec-head .tag{color:var(--gold);letter-spacing:4px;font-size:.78rem;text-transform:uppercase}
+.sec-head h2{font-size:clamp(1.9rem,4vw,3rem);margin:.5rem 0 .8rem}
+.sec-head p{color:var(--muted);max-width:560px;margin:0 auto}
+.divider{width:90px;height:3px;background:var(--gold-grad);margin:1rem auto 0;border-radius:3px}
+
+/* Brands */
+.brands{display:grid;grid-template-columns:repeat(7,1fr);gap:1rem}
+.brand-card{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.4rem .6rem;text-align:center;
+  cursor:pointer;transition:.35s;position:relative;overflow:hidden;
+}
+.brand-card::before{content:"";position:absolute;inset:0;background:var(--gold-grad);opacity:0;transition:.35s}
+.brand-card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 14px 34px rgba(212,175,55,.2)}
+.brand-card:hover::before{opacity:.08}
+.brand-card .ico{
+  width:58px;height:58px;margin:0 auto .8rem;border-radius:50%;display:grid;place-items:center;
+  border:1.5px solid var(--gold);font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;color:var(--gold-light);
+  background:var(--black-3);position:relative;
+}
+.brand-card h3{font-size:.95rem;font-family:'Poppins';font-weight:500;position:relative}
+.brand-card small{color:var(--muted);font-size:.72rem;position:relative}
+
+/* Toolbar */
+.toolbar{
+  position:sticky;top:64px;z-index:50;
+  background:rgba(8,8,8,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:22px;padding:1rem 1.2rem;margin-bottom:2.5rem;
+  box-shadow:var(--shadow);
+}
+.search-box{position:relative;margin-bottom:.9rem}
+.search-box svg{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:2}
+.search-box input{
+  width:100%;padding:.9rem 3rem .9rem 3rem;border-radius:50px;border:1px solid var(--line);
+  background:var(--black-3);color:var(--text);font-size:.95rem;outline:none;transition:.3s;
+}
+.search-box input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(212,175,55,.12)}
+.search-box button{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:0;
+  color:var(--muted);font-size:1.3rem;cursor:pointer;display:none;
+}
+.chips{display:flex;gap:.55rem;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  flex:0 0 auto;padding:.5rem 1.15rem;border-radius:50px;border:1px solid var(--line);background:transparent;
+  color:var(--muted);font-size:.84rem;cursor:pointer;transition:.3s;
+}
+.chip:hover{color:var(--gold-light);border-color:var(--gold)}
+.chip.active{background:var(--gold-grad);color:#111;border-color:transparent;font-weight:600}
+
+/* Product blocks */
+.block{margin-bottom:4.5rem}
+.block-head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:1rem;margin-bottom:1.8rem}
+.block-head h2{font-size:clamp(1.6rem,3.2vw,2.3rem)}
+.block-head p{color:var(--muted);font-size:.92rem}
+.count{color:var(--gold);font-size:.85rem;border:1px solid var(--line);padding:.3rem .9rem;border-radius:50px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.4rem}
+.card{
+  background:linear-gradient(180deg,#151515,#0c0c0c);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:.4s;position:relative;display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 22px 44px rgba(0,0,0,.6),0 0 30px rgba(212,175,55,.12)}
+.card-img{
+  height:230px;display:grid;place-items:center;position:relative;overflow:hidden;
+  background:radial-gradient(circle at 50% 40%,rgba(212,175,55,.16),transparent 65%),#0a0a0a;
+}
+.card-img svg,.card-img img{height:82%;width:auto;max-width:80%;object-fit:contain;transition:.5s;filter:drop-shadow(0 14px 18px rgba(0,0,0,.65))}
+.card:hover .card-img svg,.card:hover .card-img img{transform:scale(1.08) rotate(-2deg)}
+.tag-demo{
+  position:absolute;top:12px;left:12px;font-size:.63rem;letter-spacing:1.5px;font-weight:600;padding:.25rem .65rem;border-radius:50px;
+  background:rgba(255,80,80,.12);border:1px dashed #ff6b6b;color:#ff8f8f;z-index:2;
+}
+.tag-cond{
+  position:absolute;top:12px;right:12px;font-size:.68rem;font-weight:600;padding:.25rem .7rem;border-radius:50px;
+  background:var(--gold-grad);color:#111;z-index:2;
+}
+.tag-new{
+  position:absolute;top:12px;right:12px;font-size:.68rem;font-weight:600;padding:.25rem .7rem;border-radius:50px;
+  background:#1f1f1f;border:1px solid var(--gold);color:var(--gold-light);z-index:2;
+}
+.card-body{padding:1.2rem 1.2rem 1.3rem;display:flex;flex-direction:column;flex:1}
+.card-brand{color:var(--gold);font-size:.72rem;letter-spacing:2px;text-transform:uppercase}
+.card h3{font-family:'Poppins';font-weight:500;font-size:1.05rem;margin:.2rem 0 .5rem}
+.specs{list-style:none;color:var(--muted);font-size:.8rem;margin-bottom:1rem;display:flex;flex-wrap:wrap;gap:.35rem}
+.specs li{background:var(--black-3);border:1px solid #232323;padding:.15rem .6rem;border-radius:50px}
+.price-row{display:flex;align-items:baseline;gap:.6rem;margin-top:auto;margin-bottom:1rem;flex-wrap:wrap}
+.price{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-light)}
+.old{color:#706b60;text-decoration:line-through;font-size:.85rem}
+.sample{font-size:.62rem;color:#ff8f8f;letter-spacing:1px}
+.card .btn{width:100%;padding:.75rem 1rem;font-size:.9rem}
+.empty{
+  grid-column:1/-1;text-align:center;padding:3rem 1rem;border:1px dashed var(--line);border-radius:var(--radius);color:var(--muted);
+}
+.empty b{display:block;color:var(--gold-light);font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:.3rem}
+
+/* Notice */
+.notice{
+  background:rgba(255,80,80,.07);border:1px dashed #ff6b6b;color:#ffb0b0;border-radius:14px;
+  padding:.9rem 1.2rem;font-size:.85rem;margin-bottom:2rem;text-align:center;
+}
+
+/* Why / About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.about-art{
+  position:relative;aspect-ratio:1/1;border-radius:30px;border:1px solid var(--line);
+  background:radial-gradient(circle at 30% 20%,rgba(212,175,55,.25),transparent 55%),var(--black-3);
+  display:grid;place-items:center;overflow:hidden;
+}
+.about-art .big{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(3rem,9vw,6rem);letter-spacing:6px}
+.about-art small{display:block;text-align:center;letter-spacing:6px;color:var(--muted);font-size:.7rem;margin-top:.6rem}
+.about-art::after{content:"";position:absolute;inset:14px;border:1px solid var(--line);border-radius:22px;pointer-events:none}
+.about-text h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:.5rem 0 1rem}
+.about-text p{color:var(--muted);margin-bottom:1rem}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.6rem}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1rem;transition:.3s}
+.feat:hover{border-color:var(--gold);transform:translateY(-4px)}
+.feat b{display:block;color:var(--gold-light);font-weight:500;margin-bottom:.15rem}
+.feat span{font-size:.8rem;color:var(--muted)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem}
+.info-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:2rem}
+.info-item{display:flex;gap:1rem;margin-bottom:1.5rem}
+.info-item .ic{
+  flex:0 0 48px;height:48px;border-radius:14px;display:grid;place-items:center;border:1px solid var(--gold);color:var(--gold);background:var(--black-3);font-size:1.2rem;
+}
+.info-item b{display:block;font-weight:500}
+.info-item span,.info-item a{color:var(--muted);font-size:.9rem}
+.info-item a:hover{color:var(--gold-light)}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:320px;height:100%}
+.map iframe{width:100%;height:100%;min-height:320px;border:0;filter:grayscale(.85) invert(.92) contrast(.9) hue-rotate(180deg)}
+.form{margin-top:2rem;display:grid;gap:.8rem}
+.form input,.form textarea{
+  width:100%;padding:.85rem 1.1rem;border-radius:14px;border:1px solid var(--line);background:var(--black-3);color:var(--text);outline:none;font-size:.92rem;
+}
+.form input:focus,.form textarea:focus{border-color:var(--gold)}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:2.5rem 0 5rem;background:#030303}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem}
+.foot p{color:var(--muted);font-size:.85rem}
+.foot ul{display:flex;gap:1.4rem;list-style:none;flex-wrap:wrap}
+.foot ul a{color:var(--muted);font-size:.85rem;transition:.3s}
+.foot ul a:hover{color:var(--gold-light)}
+
+/* Floating buttons */
+.wa-float{
+  position:fixed;right:20px;bottom:20px;z-index:200;width:62px;height:62px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.5);transition:.3s;
+}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:ring 2s infinite}
+@keyframes ring{to{transform:scale(1.7);opacity:0}}
+.wa-float svg{width:34px;height:34px;fill:#fff}
+.to-top{
+  position:fixed;left:20px;bottom:20px;z-index:200;width:46px;height:46px;border-radius:50%;
+  background:var(--black-3);border:1px solid var(--gold);color:var(--gold);cursor:pointer;font-size:1.2rem;
+  opacity:0;pointer-events:none;transition:.3s;
+}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{background:var(--gold);color:#111}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* Toast */
+.toast{
+  position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);background:var(--black-3);border:1px solid var(--gold);
+  color:var(--gold-light);padding:.7rem 1.4rem;border-radius:50px;font-size:.88rem;z-index:300;opacity:0;pointer-events:none;transition:.4s;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1024px){
+  .brands{grid-template-columns:repeat(4,1fr)}
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero{text-align:center;padding-top:7rem}
+  .hero p.lead{margin-inline:auto}
+  .hero-btns,.stats{justify-content:center}
+  .hero-visual{height:480px;order:-1;margin-top:1rem}
+  .about-art{max-width:420px;margin:0 auto}
+}
+@media(max-width:820px){
+  .burger{display:block}
+  .nav-links{
+    position:fixed;top:0;right:-100%;width:min(320px,82%);height:100vh;background:rgba(6,6,6,.97);backdrop-filter:blur(16px);
+    flex-direction:column;justify-content:center;gap:1.8rem;border-left:1px solid var(--line);transition:.45s;
+  }
+  .nav-links.open{right:0}
+  .nav-links a{font-size:1.1rem}
+  header .nav-cta-wrap{display:none}
+  .nav-links .mob-cta{display:block}
+}
+@media(min-width:821px){.nav-links .mob-cta{display:none}}
+@media(max-width:640px){
+  section{padding:4rem 0}
+  .brands{grid-template-columns:repeat(2,1fr)}
+  .hero-visual{height:380px}
+  .hero-phone.p1{width:165px}.hero-phone.p2,.hero-phone.p3{width:125px}
+  .hero-glow{width:300px;height:300px}.hero-ring{width:310px;height:310px}.hero-ring.r2{width:370px;height:370px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:.8rem}
+  .card-img{height:170px}
+  .card-body{padding:.9rem}
+  .card h3{font-size:.92rem}
+  .price{font-size:1.2rem}
+  .specs li{font-size:.68rem}
+  .card .btn{font-size:.78rem;padding:.65rem .4rem}
+  .features{grid-template-columns:1fr}
+  .toolbar{top:58px;padding:.8rem}
+  .foot{flex-direction:column;text-align:center}
+  .stats{gap:1.4rem}
+}
+@media(max-width:380px){.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="header">
+  <div class="container nav">
+    <a href="#home" class="logo" aria-label="HITECH Home">
+      <span class="logo-mark">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+          <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e27a"/><stop offset=".5" stop-color="#d4af37"/><stop offset="1" stop-color="#a67c00"/></linearGradient></defs>
+          <rect x="9" y="2" width="14" height="28" rx="3.5" stroke="url(#lg)" stroke-width="2"/>
+          <path d="M13 8v16M19 8v16M13 16h6" stroke="url(#lg)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span><span class="logo-text gold-text">HITECH</span><span class="logo-sub">MOBILE &bull; ACCESSORIES</span></span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#brands">Brands</a></li>
+      <li><a href="#new">New Phones</a></li>
+      <li><a href="#used">Used Phones</a></li>
+      <li><a href="#accessories">Accessories</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="mob-cta"><a href="#" class="btn btn-wa js-wa-general">WhatsApp Us</a></li>
+    </ul>
+
+    <div class="nav-cta-wrap">
+      <a href="#" class="btn btn-gold nav-cta js-wa-general">WhatsApp Us</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="eyebrow"><i></i> Ichapur &bull; Kanthadhar &bull; West Bengal</span>
+      <h1>Premium <span class="gold-text">Smartphones</span> at Honest Prices</h1>
+      <p class="lead">Brand new phones, certified used phones and genuine mobile accessories. Visit HITECH for trusted quality, fair deals and friendly service.</p>
+      <div class="hero-btns">
+        <a href="#new" class="btn btn-gold">Explore Phones &rarr;</a>
+        <a href="#" class="btn btn-outline js-wa-general">Chat on WhatsApp</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-count="7">0</b><span>TOP BRANDS</span></div>
+        <div class="stat"><b data-count="500" data-suffix="+">0</b><span>HAPPY CUSTOMERS*</span></div>
+        <div class="stat"><b data-count="100" data-suffix="%">0</b><span>GENUINE PRODUCTS*</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="hero-glow"></div>
+      <div class="hero-ring"></div>
+      <div class="hero-ring r2"></div>
+      <div class="hero-phone p2" id="heroP2"></div>
+      <div class="hero-phone p3" id="heroP3"></div>
+      <div class="hero-phone p1" id="heroP1"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BRANDS ================= -->
+<section id="brands" style="padding-top:2rem">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Shop by Brand</span>
+      <h2>Top <span class="gold-text">Brands</span> We Sell</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="brands" id="brandGrid"></div>
+  </div>
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+<section id="shop" style="padding-top:1rem">
+  <div class="container">
+    <div class="notice reveal">
+      &#9888; <b>DEMO MODE:</b> All products, images and prices below are <b>sample data</b>. Edit the <code>PRODUCTS</code> list in the code to add your real stock.
+    </div>
+
+    <div class="toolbar reveal">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
+        <input id="searchInput" type="search" placeholder="Search phones, accessories, brands..." autocomplete="off">
+        <button id="clearSearch" aria-label="Clear search">&times;</button>
+      </div>
+      <div class="chips" id="chips"></div>
+    </div>
+
+    <div class="block" id="new">
+      <div class="block-head reveal">
+        <div><h2>New <span class="gold-text">Smartphones</span></h2><p>Sealed box, full company warranty.</p></div>
+        <span class="count" id="countNew">0 items</span>
+      </div>
+      <div class="grid" id="gridNew"></div>
+    </div>
+
+    <div class="block" id="used">
+      <div class="block-head reveal">
+        <div><h2>Used <span class="gold-text">Smartphones</span></h2><p>Quality checked, tested and shop warranty.</p></div>
+        <span class="count" id="countUsed">0 items</span>
+      </div>
+      <div class="grid" id="gridUsed"></div>
+    </div>
+
+    <div class="block" id="accessories" style="margin-bottom:0">
+      <div class="block-head reveal">
+        <div><h2>Mobile <span class="gold-text">Accessories</span></h2><p>Chargers, earbuds, cases, power banks and more.</p></div>
+        <span class="count" id="countAcc">0 items</span>
+      </div>
+      <div class="grid" id="gridAcc"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-art reveal">
+      <div><div class="big gold-text">HITECH</div><small>EST. &bull; YOUR CITY OF TRUST</small></div>
+    </div>
+    <div class="about-text reveal">
+      <span class="eyebrow" style="font-size:.7rem">About Us</span>
+      <h2>Your Trusted <span class="gold-text">Mobile Partner</span> in Ichapur</h2>
+      <p>HITECH is a local smartphone shop in Ichapur, Kanthadhar, West Bengal. We bring you the latest new phones, carefully inspected used phones and quality accessories at prices that make sense.</p>
+      <p>Our promise is simple: genuine products, transparent pricing and honest advice, so every customer leaves with a phone they love.</p>
+      <div class="features">
+        <div class="feat"><b>&#10003; Genuine Products</b><span>100% original phones &amp; accessories</span></div>
+        <div class="feat"><b>&#10003; Best Prices</b><span>Fair and transparent deals</span></div>
+        <div class="feat"><b>&#10003; Tested Used Phones</b><span>Quality checked before sale</span></div>
+        <div class="feat"><b>&#10003; Quick WhatsApp Help</b><span>Order and ask anytime</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" style="padding-top:2rem">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Get In Touch</span>
+      <h2>Visit <span class="gold-text">HITECH</span> Today</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="info-card reveal">
+        <div class="info-item"><div class="ic">&#128205;</div><div><b>Shop Address</b><span>HITECH, Ichapur, Kanthadhar,<br>West Bengal, India</span></div></div>
+        <div class="info-item"><div class="ic">&#128222;</div><div><b>Phone / WhatsApp</b><a id="phoneLink" href="#">+91XXXXXXXXXX</a> <small style="color:#ff8f8f">(placeholder)</small></div></div>
+        <div class="info-item"><div class="ic">&#9993;</div><div><b>Email</b><a id="emailLink" href="#">yourshop@example.com</a> <small style="color:#ff8f8f">(placeholder)</small></div></div>
+        <div class="info-item"><div class="ic">&#128339;</div><div><b>Opening Hours</b><span>Mon - Sun: 10:00 AM - 9:00 PM <small style="color:#ff8f8f">(sample)</small></span></div></div>
+        <a href="#" class="btn btn-wa js-wa-general" style="width:100%">Chat on WhatsApp</a>
+
+        <form class="form" id="contactForm">
+          <input type="text" id="cName" placeholder="Your name" required>
+          <textarea id="cMsg" rows="3" placeholder="What are you looking for?" required></textarea>
+          <button type="submit" class="btn btn-gold">Send via WhatsApp</button>
+        </form>
+      </div>
+      <div class="map reveal">
+        <iframe title="HITECH shop location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Ichapur%20Kanthadhar%20West%20Bengal&amp;z=14&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <a href="#home" class="logo"><span class="logo-text gold-text" style="font-size:1.3rem">HITECH</span></a>
+    <ul>
+      <li><a href="#new">New Phones</a></li>
+      <li><a href="#used">Used Phones</a></li>
+      <li><a href="#accessories">Accessories</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p>&copy; <span id="year"></span> HITECH, Ichapur. All rights reserved.<br><small>*Stats are sample values. Edit them in the code.</small></p>
+  </div>
+</footer>
+
+<!-- Floating -->
+<a href="#" class="wa-float js-wa-general" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.004 3C9.38 3 4 8.376 4 15c0 2.116.553 4.18 1.6 6L4 29l8.2-1.56A11.94 11.94 0 0 0 16 28c6.62 0 12-5.376 12-12S22.62 3 16.004 3zm0 21.8c-1.8 0-3.56-.48-5.1-1.4l-.36-.22-4.86.92.94-4.74-.24-.38A9.76 9.76 0 0 1 6.2 15c0-5.42 4.4-9.8 9.8-9.8 5.4 0 9.8 4.38 9.8 9.8s-4.4 9.8-9.8 9.8zm5.4-7.34c-.3-.14-1.74-.86-2.02-.96-.26-.1-.46-.14-.66.14-.2.3-.76.96-.94 1.16-.16.2-.34.22-.64.08-.3-.16-1.24-.46-2.36-1.46-.88-.78-1.46-1.74-1.64-2.04-.16-.3-.02-.46.14-.6.14-.14.3-.34.46-.52.14-.18.2-.3.3-.5.1-.2.04-.38-.02-.52-.08-.14-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.08-.8.38-.26.3-1.04 1.02-1.04 2.48s1.06 2.88 1.2 3.08c.16.2 2.1 3.2 5.08 4.48.7.3 1.26.48 1.7.62.72.22 1.36.2 1.88.12.58-.08 1.74-.72 1.98-1.4.24-.7.24-1.28.18-1.4-.08-.12-.28-.2-.58-.34z"/></svg>
+</a>
+<button class="to-top" id="toTop" aria-label="Back to top">&uarr;</button>
+<div class="toast" id="toast"></div>
+
+<script>
+/* =====================================================================
+   CONFIG  -  EDIT THESE
+   ===================================================================== */
+const CONFIG = {
+  WHATSAPP_NUMBER: "91XXXXXXXXXX",     // <-- Replace with your number: country code + number, no "+" or spaces (e.g. 919876543210)
+  PHONE_DISPLAY:   "+91XXXXXXXXXX",    // <-- Shown on the website
+  EMAIL:           "yourshop@example.com",
+  SHOP_NAME:       "HITECH"
+};
+
+/* =====================================================================
+   PRODUCTS  -  DEMO DATA. EDIT / REPLACE WITH YOUR REAL STOCK.
+   type: "new" | "used" | "acc"
+   brand: Apple, Samsung, OnePlus, Vivo, Oppo, Realme, Xiaomi, Universal
+   demo: true  -> shows the red "DEMO" tag (remove when product is real)
+   img:  optional real photo path, e.g. "photos/iphone.jpg" (otherwise an SVG is drawn)
+   kind (accessories only): charger, earbuds, case, powerbank, cable, glass, watch, speaker
+   Prices are SAMPLE prices in Indian Rupees.
+   ===================================================================== */
+const PRODUCTS = [
+  /* ---------- NEW PHONES ---------- */
+  {id:1,  type:"new",  brand:"Apple",   name:"iPhone 15 (Demo)",           price:69900, old:79900, specs:["128GB","6.1\" OLED","48MP Camera"], colors:["#3a3a3c","#8e8e93"], demo:true},
+  {id:2,  type:"new",  brand:"Samsung", name:"Galaxy S24 (Demo)",          price:74999, old:79999, specs:["256GB","6.2\" AMOLED","50MP Camera"], colors:["#4b3a7a","#1c1432"], demo:true},
+  {id:3,  type:"new",  brand:"OnePlus", name:"OnePlus 12R (Demo)",         price:39999, old:42999, specs:["8GB+128GB","6.78\" 120Hz","100W Charge"], colors:["#1f5c4a","#0b241d"], demo:true},
+  {id:4,  type:"new",  brand:"Vivo",    name:"Vivo V30 (Demo)",            price:33999, old:36999, specs:["8GB+256GB","6.78\" AMOLED","50MP Selfie"], colors:["#c9772b","#5a2e0e"], demo:true},
+  {id:5,  type:"new",  brand:"Oppo",    name:"Oppo Reno 11 (Demo)",        price:29999, old:32999, specs:["8GB+128GB","6.7\" AMOLED","50MP Portrait"], colors:["#2c6e9b","#0d2b40"], demo:true},
+  {id:6,  type:"new",  brand:"Realme",  name:"Realme 12 Pro (Demo)",       price:25999, old:28999, specs:["8GB+128GB","6.7\" 120Hz","Periscope Lens"], colors:["#7a5a2a","#2c1f0a"], demo:true},
+  {id:7,  type:"new",  brand:"Xiaomi",  name:"Redmi Note 13 Pro (Demo)",   price:23999, old:26999, specs:["8GB+256GB","6.67\" AMOLED","200MP Camera"], colors:["#5b2a7a","#1d0d2b"], demo:true},
+  {id:8,  type:"new",  brand:"Samsung", name:"Galaxy A55 (Demo)",          price:36999, old:39999, specs:["8GB+128GB","6.6\" AMOLED","IP67"], colors:["#2a6f8f","#0c2a38"], demo:true},
+
+  /* ---------- USED PHONES ---------- */
+  {id:21, type:"used", brand:"Apple",   name:"iPhone 13 (Demo Used)",      price:34999, old:49900, specs:["128GB","Battery 88%","Box + Charger"], cond:"Grade A", colors:["#2b3a55","#0d1422"], demo:true},
+  {id:22, type:"used", brand:"Apple",   name:"iPhone 11 (Demo Used)",      price:19999, old:29900, specs:["64GB","Battery 82%","Good Condition"], cond:"Grade B", colors:["#6b2a3a","#240b12"], demo:true},
+  {id:23, type:"used", brand:"Samsung", name:"Galaxy S21 (Demo Used)",     price:21999, old:39999, specs:["8GB+128GB","Tested","Phone Only"], cond:"Grade A", colors:["#7a4a8a","#26142b"], demo:true},
+  {id:24, type:"used", brand:"OnePlus", name:"OnePlus 9 (Demo Used)",      price:18999, old:34999, specs:["8GB+128GB","Battery 90%","Charger Included"], cond:"Grade A", colors:["#6a6a6a","#1f1f1f"], demo:true},
+  {id:25, type:"used", brand:"Vivo",    name:"Vivo V23 (Demo Used)",       price:11999, old:20999, specs:["8GB+128GB","Tested","With Box"], cond:"Grade B", colors:["#2a8a7a","#0b2b26"], demo:true},
+  {id:26, type:"used", brand:"Oppo",    name:"Oppo F21 Pro (Demo Used)",   price:9999,  old:17999, specs:["8GB+128GB","Tested","Good Condition"], cond:"Grade B", colors:["#c94a2b","#4a140a"], demo:true},
+  {id:27, type:"used", brand:"Realme",  name:"Realme 9 Pro (Demo Used)",   price:8499,  old:15999, specs:["6GB+128GB","Tested","Phone Only"], cond:"Grade B", colors:["#2a7a4a","#0a2b17"], demo:true},
+  {id:28, type:"used", brand:"Xiaomi",  name:"Redmi Note 11 (Demo Used)",  price:6999,  old:13999, specs:["6GB+128GB","Tested","Charger Included"], cond:"Grade A", colors:["#2a4a8a","#0a1a3a"], demo:true},
+
+  /* ---------- ACCESSORIES ---------- */
+  {id:41, type:"acc", brand:"Universal", kind:"charger",   name:"33W Fast Charger (Demo)",      price:699,  old:999,  specs:["Type-C","Fast Charge","BIS Certified"], demo:true},
+  {id:42, type:"acc", brand:"Apple",     kind:"earbuds",   name:"Wireless Earbuds (Demo)",      price:1499, old:2499, specs:["Bluetooth 5.3","ENC Mic","30H Battery"], demo:true},
+  {id:43, type:"acc", brand:"Samsung",   kind:"case",      name:"Premium Back Case (Demo)",     price:399,  old:699,  specs:["Shockproof","Matte","Slim Fit"], demo:true},
+  {id:44, type:"acc", brand:"Universal", kind:"powerbank", name:"10000mAh Power Bank (Demo)",   price:1199, old:1799, specs:["22.5W","Dual Output","LED Display"], demo:true},
+  {id:45, type:"acc", brand:"Universal", kind:"cable",     name:"Braided Type-C Cable (Demo)",  price:249,  old:449,  specs:["1.5m","3A Fast","Durable"], demo:true},
+  {id:46, type:"acc", brand:"Apple",     kind:"glass",     name:"Tempered Glass (Demo)",        price:199,  old:399,  specs:["9H Hard","Anti-Scratch","Easy Fit"], demo:true},
+  {id:47, type:"acc", brand:"Xiaomi",    kind:"watch",     name:"Smart Watch (Demo)",           price:2499, old:3999, specs:["1.8\" Display","Calling","SpO2"], demo:true},
+  {id:48, type:"acc", brand:"Universal", kind:"speaker",   name:"Bluetooth Speaker (Demo)",     price:1299, old:1999, specs:["10W Sound","12H Play","Waterproof"], demo:true}
+];
+
+const BRANDS = ["Apple","Samsung","OnePlus","Vivo","Oppo","Realme","Xiaomi"];
+
+/* =====================================================================
+   HELPERS
+   ===================================================================== */
+const $  = (s, c=document) => c.querySelector(s);
+const $$ = (s, c=document) => [...c.querySelectorAll(s)];
+const inr = n => "\u20B9" + Number(n).toLocaleString("en-IN");
+const esc = s => String(s).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+
+function waLink(text){
+  return "https://wa.me/" + CONFIG.WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
+}
+function productMessage(p){
+  const kind = p.type === "new" ? "New Phone" : p.type === "used" ? "Used Phone" : "Accessory";
+  return `Hello ${CONFIG.SHOP_NAME}! I want to order:\n\n` +
+         `Product: ${p.name}\nBrand: ${p.brand}\nCategory: ${kind}\nPrice: ${inr(p.price)}\n\nIs it available?`;
+}
+let toastTimer;
+function toast(msg){
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 2600);
+}
+
+/* =====================================================================
+   SVG IMAGE GENERATORS (no external images needed)
+   ===================================================================== */
+let uid = 0;
+function phoneSVG(brand, [c1, c2], opts={}){
+  const id = "g" + (++uid);
+  let cam = "";
+  const lens = (x,y,r=7) => `<circle cx="${x}" cy="${y}" r="${r}" fill="#0a0a0a" stroke="#555" stroke-width="1.5"/><circle cx="${x}" cy="${y}" r="${r/2.6}" fill="#1c2a44"/>`;
+  switch(brand){
+    case "Apple":
+      cam = `<rect x="14" y="14" width="40" height="40" rx="11" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.25)"/>${lens(25,25)}${lens(43,25)}${lens(34,43)}
+             <path d="M70 118c-3-4-1-9 3-11 2 4 0 8-3 11zM76 118c-2 2-6 2-8 0-4-2-5-8-2-12 2-3 5-3 7-2 2-1 5-1 7 2-4 2-5 7-2 10 1 1 1 2-2 2z" fill="rgba(255,255,255,.35)" transform="translate(-6,-8) scale(.9)"/>`;
+      break;
+    case "Samsung":
+      cam = `${lens(24,24,6.5)}${lens(24,44,6.5)}${lens(24,64,6.5)}<circle cx="38" cy="30" r="3" fill="#ffd86b"/>`;
+      break;
+    case "OnePlus":
+      cam = `<circle cx="38" cy="38" r="26" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.3)" stroke-width="2"/>${lens(28,28,7)}${lens(48,28,7)}${lens(38,48,7)}<rect x="16" y="86" width="20" height="3" rx="1.5" fill="rgba(255,255,255,.35)"/>`;
+      break;
+    case "Vivo":
+      cam = `<rect x="12" y="12" width="46" height="30" rx="15" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.25)"/>${lens(27,27,7)}${lens(45,27,7)}<circle cx="53" cy="48" r="3" fill="#ffd86b"/>`;
+      break;
+    case "Oppo":
+      cam = `<rect x="12" y="12" width="46" height="46" rx="14" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.25)"/>${lens(27,27,7.5)}${lens(45,27,7.5)}${lens(27,45,7.5)}<circle cx="45" cy="45" r="3.5" fill="#ffd86b"/>`;
+      break;
+    case "Realme":
+      cam = `<rect x="12" y="12" width="46" height="46" rx="23" fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.25)"/>${lens(35,27,9)}${lens(26,46,6)}${lens(44,46,6)}`;
+      break;
+    default: /* Xiaomi */
+      cam = `<rect x="12" y="12" width="46" height="46" rx="12" fill="rgba(0,0,0,.35)" stroke="rgba(255,255,255,.25)"/>${lens(27,27,8)}${lens(45,27,5)}${lens(27,45,5)}${lens(45,45,5)}`;
+  }
+  const scale = opts.scale || 1;
+  return `<svg viewBox="0 0 160 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(brand)} smartphone">
+    <defs>
+      <linearGradient id="${id}b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient>
+      <linearGradient id="${id}s" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a1a1a"/><stop offset="1" stop-color="#050505"/></linearGradient>
+      <linearGradient id="${id}r" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f6e27a"/><stop offset=".5" stop-color="#d4af37"/><stop offset="1" stop-color="#a67c00"/></linearGradient>
+    </defs>
+    <!-- back phone -->
+    <g transform="translate(0,0)">
+      <rect x="6" y="6" width="104" height="218" rx="22" fill="url(#${id}b)" stroke="url(#${id}r)" stroke-width="2.5"/>
+      <rect x="6" y="6" width="104" height="218" rx="22" fill="url(#${id}s)" opacity=".0"/>
+      <g transform="translate(14,14)">${cam}</g>
+      <text x="58" y="190" font-family="Georgia,serif" font-size="14" font-weight="700" letter-spacing="3" text-anchor="middle" fill="rgba(255,255,255,.35)">${esc(brand.toUpperCase())}</text>
+      <path d="M12 30 Q 40 120 12 200" stroke="rgba(255,255,255,.08)" stroke-width="22" fill="none"/>
+    </g>
+    <!-- front phone -->
+    <g transform="translate(50,96)">
+      <rect x="0" y="0" width="104" height="218" rx="22" fill="#0a0a0a" stroke="url(#${id}r)" stroke-width="3"/>
+      <rect x="7" y="7" width="90" height="204" rx="16" fill="url(#${id}b)"/>
+      <rect x="7" y="7" width="90" height="204" rx="16" fill="url(#${id}s)" opacity=".55"/>
+      <circle cx="52" cy="19" r="4.5" fill="#000" stroke="#333"/>
+      <text x="52" y="85" font-family="Georgia,serif" font-size="26" font-weight="700" text-anchor="middle" fill="#fff" opacity=".92">10:09</text>
+      <text x="52" y="103" font-family="Arial" font-size="7.5" text-anchor="middle" fill="#fff" opacity=".6">Sat, 7 November</text>
+      <rect x="22" y="150" width="60" height="26" rx="13" fill="rgba(255,255,255,.14)"/>
+      <rect x="30" y="198" width="44" height="3" rx="1.5" fill="rgba(255,255,255,.5)"/>
+      <path d="M7 60 Q 52 30 97 90 L 97 40 Q 60 10 7 30Z" fill="rgba(255,255,255,.06)"/>
+    </g>
+  </svg>`;
+}
+
+/* Single front-facing phone for hero */
+function heroPhoneSVG(c1, c2, label){
+  const id = "h" + (++uid);
+  return `<svg viewBox="0 0 120 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="${id}b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient>
+      <linearGradient id="${id}r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e27a"/><stop offset=".5" stop-color="#d4af37"/><stop offset="1" stop-color="#a67c00"/></linearGradient>
+    </defs>
+    <rect x="2" y="2" width="116" height="246" rx="24" fill="#080808" stroke="url(#${id}r)" stroke-width="3"/>
+    <rect x="8" y="8" width="104" height="234" rx="18" fill="url(#${id}b)"/>
+    <path d="M8 90 Q 60 40 112 120 L112 50 Q 70 10 8 40Z" fill="rgba(255,255,255,.08)"/>
+    <rect x="44" y="14" width="32" height="9" rx="4.5" fill="#000"/>
+    <text x="60" y="98" font-family="Georgia,serif" font-size="30" font-weight="700" text-anchor="middle" fill="#fff">10:09</text>
+    <text x="60" y="118" font-family="Georgia,serif" font-size="11" letter-spacing="4" text-anchor="middle" fill="#f6e27a" font-weight="700">${label}</text>
+    <rect x="26" y="170" width="68" height="30" rx="15" fill="rgba(255,255,255,.14)"/>
+    <rect x="38" y="230" width="44" height="3.5" rx="2" fill="rgba(255,255,255,.55)"/>
+  </svg>`;
+}
+
+function accSVG(kind){
+  const id = "a" + (++uid);
+  const defs = `<defs>
+    <linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e27a"/><stop offset=".5" stop-color="#d4af37"/><stop offset="1" stop-color="#a67c00"/></linearGradient>
+    <linearGradient id="${id}d" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b2b2b"/><stop offset="1" stop-color="#0d0d0d"/></linearGradient></defs>`;
+  const G = `url(#${id}g)`, D = `url(#${id}d)`;
+  let body = "";
+  switch(kind){
+    case "charger":
+      body = `<rect x="52" y="40" width="96" height="96" rx="18" fill="${D}" stroke="${G}" stroke-width="3"/>
+        <rect x="80" y="14" width="10" height="28" rx="3" fill="${G}"/><rect x="110" y="14" width="10" height="28" rx="3" fill="${G}"/>
+        <rect x="76" y="136" width="48" height="26" rx="6" fill="#050505" stroke="${G}" stroke-width="2"/>
+        <text x="100" y="92" font-family="Georgia" font-size="16" font-weight="700" text-anchor="middle" fill="${G}">33W</text>
+        <path d="M100 150v-8" stroke="${G}" stroke-width="3"/>`;
+      break;
+    case "earbuds":
+      body = `<rect x="38" y="118" width="124" height="66" rx="30" fill="${D}" stroke="${G}" stroke-width="3"/>
+        <line x1="100" y1="118" x2="100" y2="184" stroke="${G}" stroke-width="2"/>
+        <circle cx="100" cy="151" r="5" fill="${G}"/>
+        <g transform="translate(58,18)"><ellipse cx="14" cy="24" rx="18" ry="24" fill="${D}" stroke="${G}" stroke-width="3"/><rect x="24" y="36" width="9" height="42" rx="4.5" fill="${G}"/></g>
+        <g transform="translate(86,18)"><ellipse cx="30" cy="24" rx="18" ry="24" fill="${D}" stroke="${G}" stroke-width="3"/><rect x="11" y="36" width="9" height="42" rx="4.5" fill="${G}"/></g>`;
+      break;
+    case "case":
+      body = `<rect x="52" y="14" width="96" height="172" rx="22" fill="${D}" stroke="${G}" stroke-width="3"/>
+        <rect x="62" y="24" width="40" height="40" rx="10" fill="#050505" stroke="${G}" stroke-width="2"/>
+        <circle cx="74" cy="36" r="7" fill="#111" stroke="${G}"/><circle cx="90" cy="52" r="7" fill="#111" stroke="${G}"/>
+        <text x="100" y="140" font-family="Georgia" font-size="13" font-weight="700" letter-spacing="3" text-anchor="middle" fill="${G}">HITECH</text>`;
+      break;
+    case "powerbank":
+      body = `<rect x="48" y="30" width="104" height="140" rx="20" fill="${D}" stroke="${G}" stroke-width="3"/>
+        <rect x="64" y="46" width="72" height="26" rx="6" fill="#050505" stroke="${G}" stroke-width="1.5"/>
+        <text x="100" y="65" font-family="Georgia" font-size="14" font-weight="700" text-anchor="middle" fill="${G}">10000</text>
+        <circle cx="76" cy="100" r="6" fill="${G}"/><circle cx="96" cy="100" r="6" fill="${G}" opacity=".55"/><circle cx="116" cy="100" r="6" fill="${G}" opacity=".3"/>
+        <rect x="76" y="134" width="48" height="14" rx="4" fill="#050505" stroke="${G}" stroke-width="2"/>`;
+      break;
+    case "cable":
+      body = `<path d="M44 160 C 44 80, 100 150, 100 100 S 156 60, 156 40" stroke="${G}" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <rect x="28" y="154" width="32" height="30" rx="7" fill="${D}" stroke="${G}" stroke-width="3"/>
+        <rect x="35" y="184" width="18" height="12" rx="3" fill="${G}"/>
+        <rect x="140" y="14" width="32" height="30" rx="7" fill="${D}" stroke="${G}" stroke-width="3" transform="rotate(8 156 28)"/>`;
+      break;
+    case "glass":
+      body = `<rect x="56" y="14" width="88" height="172" rx="18" fill="rgba(212,175,55,.08)" stroke="${G}" stroke-width="3"/>
+        <rect x="64" y="22" width="72" height="156" rx="12" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="5 5"/>
+        <path d="M70 30 L 100 30 L 70 90Z" fill="rgba(255,255,255,.14)"/><path d="M110 140 L 134 110 L 134 160Z" fill="rgba(255,255,255,.1)"/>
+        <text x="100" y="108" font-family="Georgia" font-size="22" font-weight="700" text-anchor="middle" fill="${G}">9H</text>`;
+      break;
+    case "watch":
+      body = `<rect x="76" y="6" width="48" height="40" rx="8" fill="${D}" stroke="${G}" stroke-width="2"/>
+        <rect x="76" y="154" width="48" height="40" rx="8" fill="${D}" stroke="${G}" stroke-width="2"/>
+        <rect x="56" y="38" width="88" height="124" rx="26" fill="${D}" stroke="${G}" stroke-width="3.5"/>
+        <rect x="64" y="46" width="72" height="108" rx="19" fill="#050505"/>
+        <text x="100" y="94" font-family="Georgia" font-size="22" font-weight="700" text-anchor="middle" fill="${G}">10:09</text>
+        <path d="M76 118 h12 l5 -10 l8 20 l6 -14 h17" stroke="${G}" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="144" y="76" width="7" height="22" rx="3" fill="${G}"/>`;
+      break;
+    default: /* speaker */
+      body = `<rect x="40" y="56" width="120" height="88" rx="40" fill="${D}" stroke="${G}" stroke-width="3"/>
+        <g fill="${G}" opacity=".85">${[...Array(5)].map((_,i)=>[...Array(3)].map((_,j)=>`<circle cx="${68+i*16}" cy="${82+j*16}" r="3"/>`).join("")).join("")}</g>
+        <circle cx="100" cy="36" r="6" fill="${G}"/><rect x="94" y="30" width="12" height="3" fill="${G}" opacity="0"/>`;
+  }
+  return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(kind)}">${defs}${body}</svg>`;
+}
+
+/* =====================================================================
+   RENDERING
+   ===================================================================== */
+const state = { brand: "All", query: "" };
+
+function imageFor(p){
+  if(p.img) return `<img src="${esc(p.img)}" alt="${esc(p.name)}" loading="lazy">`;
+  if(p.type === "acc") return accSVG(p.kind);
+  return phoneSVG(p.brand, p.colors);
+}
+
+function cardHTML(p){
+  const badge = p.type === "used" ? `<span class="tag-cond">${esc(p.cond || "Used")}</span>` :
+                p.type === "new"  ? `<span class="tag-new">NEW</span>` : "";
+  const demo = p.demo ? `<span class="tag-demo">DEMO</span>` : "";
+  const old  = p.old ? `<span class="old">${inr(p.old)}</span>` : "";
+  const sample = p.demo ? `<span class="sample">SAMPLE PRICE</span>` : "";
+  return `
+  <article class="card reveal" data-id="${p.id}">
+    <div class="card-img">${demo}${badge}${imageFor(p)}</div>
+    <div class="card-body">
+      <span class="card-brand">${esc(p.brand)}</span>
+      <h3>${esc(p.name)}</h3>
+      <ul class="specs">${p.specs.map(s => `<li>${esc(s)}</li>`).join("")}</ul>
+      <div class="price-row"><span class="price">${inr(p.price)}</span>${old}${sample}</div>
+      <a class="btn btn-wa" target="_blank" rel="noopener" href="${waLink(productMessage(p))}">
+        <svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6A12 12 0 1 0 16 3zm5.4 14.5c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.9-.9-3.1-1.7-4.3-3.8-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.7-.4z"/></svg>
+        WhatsApp Order
+      </a>
+    </div>
+  </article>`;
+}
+
+function matches(p){
+  const q = state.query.trim().toLowerCase();
+  const text = [p.name, p.brand, p.type === "new" ? "new" : p.type === "used" ? "used second hand" : "accessory accessories", p.kind || "", ...p.specs].join(" ").toLowerCase();
+  if(q && !q.split(/\s+/).every(w => text.includes(w))) return false;
+  if(state.brand !== "All"){
+    if(p.type === "acc") return p.brand === state.brand || p.brand === "Universal";
+    return p.brand === state.brand;
+  }
+  return true;
+}
+
+function renderGrid(type, gridId, countId){
+  const list = PRODUCTS.filter(p => p.type === type && matches(p));
+  const grid = $(gridId);
+  grid.innerHTML = list.length ? list.map(cardHTML).join("") :
+    `<div class="empty"><b>No products found</b>Try a different brand or search term, or message us on WhatsApp.</div>`;
+  $(countId).textContent = list.length + (list.length === 1 ? " item" : " items");
+  observeReveals(grid);
+}
+
+function renderAll(){
+  renderGrid("new",  "#gridNew",  "#countNew");
+  renderGrid("used", "#gridUsed", "#countUsed");
+  renderGrid("acc",  "#gridAcc",  "#countAcc");
+}
+
+/* Brand cards + chips */
+function buildBrands(){
+  $("#brandGrid").innerHTML = BRANDS.map(b => {
+    const n = PRODUCTS.filter(p => p.brand === b && p.type !== "acc").length;
+    return `<div class="brand-card reveal" data-brand="${b}" tabindex="0" role="button" aria-label="Show ${b} phones">
+      <div class="ico">${b[0]}</div><h3>${b}</h3><small>${n} demo phones</small></div>`;
+  }).join("");
+
+  $("#chips").innerHTML = ["All", ...BRANDS].map(b =>
+    `<button class="chip ${b === "All" ? "active" : ""}" data-brand="${b}">${b}</button>`).join("");
+
+  $$("#chips .chip").forEach(c => c.addEventListener("click", () => setBrand(c.dataset.brand)));
+  $$(".brand-card").forEach(c => {
+    const go = () => { setBrand(c.dataset.brand); $("#shop").scrollIntoView({behavior:"smooth"}); toast("Showing " + c.dataset.brand + " products"); };
+    c.addEventListener("click", go);
+    c.addEventListener("keydown", e => { if(e.key === "Enter" || e.key === " "){ e.preventDefault(); go(); } });
+  });
+}
+
+function setBrand(b){
+  state.brand = b;
+  $$("#chips .chip").forEach(c => c.classList.toggle("active", c.dataset.brand === b));
+  renderAll();
+}
+
+/* Search */
+const searchInput = $("#searchInput"), clearBtn = $("#clearSearch");
+let debounce;
+searchInput.addEventListener("input", () => {
+  clearBtn.style.display = searchInput.value ? "block" : "none";
+  clearTimeout(debounce);
+  debounce = setTimeout(() => { state.query = searchInput.value; renderAll(); }, 180);
+});
+clearBtn.addEventListener("click", () => {
+  searchInput.value = ""; state.query = ""; clearBtn.style.display = "none"; renderAll(); searchInput.focus();
+});
+
+/* =====================================================================
+   REVEAL ON SCROLL
+   ===================================================================== */
+const io = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+}, {threshold:.12, rootMargin:"0px 0px -40px 0px"}) : null;
+
+function observeReveals(root=document){
+  $$(".reveal:not(.in)", root).forEach((el, i) => {
+    if(!io){ el.classList.add("in"); return; }
+    el.style.transitionDelay = Math.min(i % 8, 7) * 60 + "ms";
+    io.observe(el);
+  });
+}
+
+/* =====================================================================
+   NAV / UI
+   ===================================================================== */
+const header = $("#header"), burger = $("#burger"), navLinks = $("#navLinks"), toTop = $("#toTop");
+burger.addEventListener("click", () => {
+  burger.classList.toggle("open"); navLinks.classList.toggle("open");
+});
+$$("#navLinks a").forEach(a => a.addEventListener("click", () => {
+  burger.classList.remove("open"); navLinks.classList.remove("open");
+}));
+
+const sections = ["home","brands","new","used","accessories","about","contact"].map(id => document.getElementById(id));
+function onScroll(){
+  const y = window.scrollY;
+  header.classList.toggle("scrolled", y > 40);
+  toTop.classList.toggle("show", y > 600);
+  let cur = "home";
+  sections.forEach(s => { if(s && s.getBoundingClientRect().top <= 140) cur = s.id; });
+  $$("#navLinks a[href^='#']").forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
+}
+window.addEventListener("scroll", onScroll, {passive:true});
+toTop.addEventListener("click", () => window.scrollTo({top:0, behavior:"smooth"}));
+
+/* Animated counters */
+function runCounters(){
+  $$("[data-count]").forEach(el => {
+    const end = +el.dataset.count, suf = el.dataset.suffix || "", dur = 1600, t0 = performance.now();
+    (function tick(t){
+      const p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(end * e) + suf;
+      if(p < 1) requestAnimationFrame(tick);
+    })(t0);
+  });
+}
+
+/* WhatsApp general links */
+function setupWhatsApp(){
+  const msg = `Hello ${CONFIG.SHOP_NAME}! I would like to know more about your phones and accessories.`;
+  $$(".js-wa-general").forEach(a => { a.href = waLink(msg); a.target = "_blank"; a.rel = "noopener"; });
+  $("#phoneLink").textContent = CONFIG.PHONE_DISPLAY;
+  $("#phoneLink").href = "tel:" + CONFIG.PHONE_DISPLAY.replace(/\s/g, "");
+  $("#emailLink").textContent = CONFIG.EMAIL;
+  $("#emailLink").href = "mailto:" + CONFIG.EMAIL;
+}
+
+/* Contact form -> WhatsApp */
+$("#contactForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = $("#cName").value.trim(), msg = $("#cMsg").value.trim();
+  window.open(waLink(`Hello ${CONFIG.SHOP_NAME}!\nMy name is ${name}.\n\n${msg}`), "_blank", "noopener");
+  e.target.reset();
+  toast("Opening WhatsApp...");
+});
+
+/* =====================================================================
+   INIT
+   ===================================================================== */
+function init(){
+  $("#year").textContent = new Date().getFullYear();
+  $("#heroP1").innerHTML = heroPhoneSVG("#7a5a10", "#1a1204", "HITECH");
+  $("#heroP2").innerHTML = heroPhoneSVG("#2b2b2b", "#050505", "PREMIUM");
+  $("#heroP3").innerHTML = heroPhoneSVG("#3a2a5a", "#0c0818", "NEW");
+  buildBrands();
+  setupWhatsApp();
+  renderAll();
+  observeReveals();
+  onScroll();
+  setTimeout(runCounters, 500);
+}
+document.addEventListener("DOMContentLoaded", init);
+</script>
+</body>
+</html>
